@@ -1,0 +1,46 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QLHV_WPF"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" x:Class="QLHV_WPF.Frm_DanhSachKhoa"
+        mc:Ignorable="d"
+        Title="Danh sách khoá học" Height="300" Width="700" FontFamily="Bree Serif" FontSize="12" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Canvas>
+            <Canvas.Background>
+                <LinearGradientBrush StartPoint=" .2,.2 " EndPoint=" .8,.8">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="LightSteelBlue" Offset="1"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+        </Canvas>
+        <Grid>
+            <DataGrid x:Name="datagrid" Margin="10,10,290,10" SelectionChanged="datagrid_SelectionChanged" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Mã Khoá" Binding="{Binding MaKhoaHoc}"/>
+                    <DataGridTextColumn Header="Khoá" Binding="{Binding TenKhoaHoc}"/>
+                    <DataGridTextColumn Header="Ngày bắt đầu" Binding="{Binding NgayBD}"/>
+                    <DataGridTextColumn Header="Ngày kết thúc" Binding="{Binding NgayKT}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <TextBlock HorizontalAlignment="Left" Margin="407,10,0,0" TextWrapping="Wrap" Text="Mã Khoá" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="407,35,0,0" TextWrapping="Wrap" Text="Tên Khoá" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="407,65,0,0" TextWrapping="Wrap" Text="Ngày bắt đầu" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="407,95,0,0" TextWrapping="Wrap" Text="Ngày kết thúc" VerticalAlignment="Top"/>
+            <TextBlock x:Name="tb_Thongbao" HorizontalAlignment="Left" Margin="410,130,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Foreground="Red"/>
+            <TextBox x:Name="txt_id" HorizontalAlignment="Left" Height="23" Margin="490,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="60"/>
+            <TextBox x:Name="txt_khoa" HorizontalAlignment="Left" Height="23" Margin="490,30,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="190"/>
+            <dxe:DateEdit x:Name="d_ngaybd" HorizontalAlignment="Left" Margin="490,60,0,0" VerticalAlignment="Top" Width="150"/>
+            <dxe:DateEdit x:Name="d_ngaykt" HorizontalAlignment="Left" Margin="490,90,0,0" VerticalAlignment="Top" Width="150"/>
+            <dx:SimpleButton x:Name="Btn_addnew" Content="Thêm" HorizontalAlignment="Left" Height="30" Margin="476,158,0,0" VerticalAlignment="Top" Width="90" Glyph="{dx:DXImageOffice2013 Image=Add_32x32.png}" Click="Btn_addnew_Click"/>
+            <dx:SimpleButton x:Name="Btn_remove" Content="Xoá" HorizontalAlignment="Left" Height="30" Margin="476,193,0,0" VerticalAlignment="Top" Width="90" Glyph="{dx:DXImageOffice2013 Image=Cancel_32x32.png}" Click="Btn_remove_Click"/>
+            <dx:SimpleButton x:Name="Btn_save" Content="Lưu" HorizontalAlignment="Left" Height="30" Margin="476,228,0,0" VerticalAlignment="Top" Width="90" Glyph="{dx:DXImageOffice2013 Image=Save_32x32.png}" Click="Btn_save_Click"/>
+            <dx:SimpleButton x:Name="Btn_clear" Content="Tạo mới" HorizontalAlignment="Left" Height="30" Margin="576,158,0,0" VerticalAlignment="Top" Width="106" Glyph="{dx:DXImageOffice2013 Image=Clear_32x32.png}" Click="Btn_clear_Click"/>
+            <dx:SimpleButton x:Name="Btn_close" Content="Đóng" HorizontalAlignment="Left" Height="30" Margin="576,193,0,0" VerticalAlignment="Top" Width="106" Glyph="{dx:DXImageOffice2013 Image=Close_32x32.png}" Click="Btn_close_Click"/>
+
+
+        </Grid>
+    </Grid>
+</Window>

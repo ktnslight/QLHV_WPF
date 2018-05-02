@@ -1,0 +1,47 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QLHV_WPF"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" x:Class="QLHV_WPF.Frm_DanhSachTaiKhoan"
+        mc:Ignorable="d"
+        Title="Frm_DanhSachTaiKhoan" Height="400" Width="692.267" FontFamily="Bree Serif">
+    <Grid>
+        <Canvas>
+            <Canvas.Background>
+                <LinearGradientBrush StartPoint=" .2,.2 " EndPoint=" .8,.8">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="LightSteelBlue" Offset="1"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+        </Canvas>
+        <Grid>
+            <DataGrid x:Name="datagrid" Height="360" Width="300" Margin="0,0,384,9" SelectionChanged="datagrid_SelectionChanged" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Tài khoản" Width="auto" Binding="{Binding TaiKhoan}"/>
+                    <DataGridTextColumn Header="Mật khẩu" Width="auto" Binding="{Binding MatKhau}"/>
+                    <DataGridTextColumn Header="Loại" Width="auto" Binding="{Binding MaLoai}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <dxlc:GroupBox Header="Thay đổi thông tin Tài khoản" HorizontalAlignment="Left" Margin="305,0,0,0" VerticalAlignment="Top" Height="135" Width="348">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Left" Margin="0,10,0,0" TextWrapping="Wrap" Text="Tên đăng nhập:" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="0,40,0,0" TextWrapping="Wrap" Text="Mật khẩu:" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="0,65,0,0" TextWrapping="Wrap" Text="Loại:" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txt_username" HorizontalAlignment="Left" Height="23" Margin="95,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="219"/>
+                    <TextBox x:Name="txt_password" HorizontalAlignment="Left" Height="23" Margin="95,30,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="219"/>
+                    <ComboBox x:Name="cb_loai" HorizontalAlignment="Left" Margin="95,60,0,0" VerticalAlignment="Top" Width="140"/>
+
+                </Grid>
+            </dxlc:GroupBox>
+            <dx:SimpleButton x:Name="Btn_addnew" Content="Thêm" HorizontalAlignment="Left" Height="30" Margin="305,140,0,0" VerticalAlignment="Top" Width="90" Glyph="{dx:DXImageOffice2013 Image=Add_32x32.png}" Click="Btn_addnew_Click"/>
+            <dx:SimpleButton x:Name="Btn_remove" Content="Xoá" HorizontalAlignment="Left" Height="30" Margin="400,140,0,0" VerticalAlignment="Top" Width="90" Glyph="{dx:DXImageOffice2013 Image=Cancel_32x32.png}" Click="Btn_remove_Click"/>
+            <dx:SimpleButton x:Name="Btn_save" Content="Lưu" HorizontalAlignment="Left" Height="30" Margin="495,140,0,0" VerticalAlignment="Top" Width="90" Glyph="{dx:DXImageOffice2013 Image=Save_32x32.png}" Click="Btn_save_Click"/>
+            <dx:SimpleButton x:Name="Btn_clear" Content="" HorizontalAlignment="Left" Height="30" Margin="590,140,0,0" VerticalAlignment="Top" Width="50" Glyph="{dx:DXImageOffice2013 Image=Clear_32x32.png}" Click="Btn_clear_Click"/>
+            <dx:SimpleButton x:Name="Btn_close" Content="Đóng" HorizontalAlignment="Left" Height="30" Margin="568,329,0,0" VerticalAlignment="Top" Width="106" Glyph="{dx:DXImageOffice2013 Image=Close_32x32.png}" Click="Btn_close_Click"/>
+            <TextBlock x:Name="tb_thongbao" HorizontalAlignment="Left" Margin="305,190,0,0" TextWrapping="Wrap" Text="" Foreground="Red" VerticalAlignment="Top"/>
+        </Grid>
+    </Grid>
+</Window>

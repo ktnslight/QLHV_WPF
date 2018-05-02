@@ -1,0 +1,91 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QLHV_WPF"
+        xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" x:Class="QLHV_WPF.Frm_ThiTracNghiem"
+        mc:Ignorable="d"
+        Title="Frm_ThiTracNghiem" Height="700" Width="1360" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Canvas>
+            <Canvas.Background>
+                <LinearGradientBrush StartPoint=" .2,.2 " EndPoint=" .8,.8">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="LightSteelBlue" Offset="1"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+        </Canvas>
+        <Grid>
+            <dxlc:GroupBox Header="Thông tin Học viên" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="165" Width="350" FontFamily="Robika" FontSize="16">
+                <Grid>
+
+                    <TextBlock x:Name="tb_id" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Mã"/>
+                    <TextBlock x:Name="tb_hoten" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Họ tên" Width="auto" Margin="10,33,10,0"/>
+                    <TextBlock x:Name="tb_ngaysinh" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="Ngày sinh" Width="auto" Margin="10,0,10,32"/>
+
+                </Grid>
+            </dxlc:GroupBox>
+            <dxlc:GroupBox x:Name="kithi" Header="Thông tin Kì thi" HorizontalAlignment="Left" Margin="365,10,0,0" VerticalAlignment="Top" Height="165" Width="350" FontFamily="Robika" FontSize="16">
+                <Grid>
+                    <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Kì thi"/>
+                    <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Môn" Margin="0,65,0,0"/>
+                    <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Đề thi" Margin="0,35,0,0"/>
+                    <TextBlock x:Name="tb_ngaythi" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="Ngày thi" Margin="0,30,0,0"/>
+                    <ComboBox x:Name="cb_kithi" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" SelectionChanged="cb_kithi_SelectionChanged"/>
+                    <ComboBox x:Name="cb_dethi" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Margin="103,30,103,0" SelectionChanged="cb_dethi_SelectionChanged"/>
+                    <ComboBox x:Name="cb_lop" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Margin="63,60,63,0" SelectionChanged="cb_lop_SelectionChanged"/>
+
+                </Grid>
+            </dxlc:GroupBox>
+            <TextBlock x:Name="tb_time" TextWrapping="Wrap" Text="00:00:00" FontFamily="Robika" FontSize="72" Margin="800,50,0,0" Height="82" VerticalAlignment="Top" HorizontalAlignment="Left" Width="289"/>
+            <dx:SimpleButton x:Name="Btn_Batdau" Content="BẮT ĐẦU" HorizontalAlignment="Left" Height="50" Margin="1150,51,0,0" VerticalAlignment="Top" Width="160" FontFamily="Robika" FontSize="20" FontWeight="Bold" Glyph="{dx:DXImage Image=Media_32x32.png}" Click="Btn_Batdau_Click" IsEnabled="False"/>
+            <dx:SimpleButton x:Name="Btn_Nopbai" Content="NỘP BÀI" HorizontalAlignment="Left" Height="50" Margin="1150,106,0,0" VerticalAlignment="Top" Width="160" FontFamily="Robika" FontSize="20" FontWeight="Bold" Glyph="{dx:DXImageOffice2013 Image=Apply_32x32.png}" Click="Btn_Nopbai_Click" IsEnabled="False"/>
+            <dxlc:GroupBox x:Name="phanthi" Header="Phần thi" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top" Width="1332" Height="469" FontFamily="Bree Serif" FontSize="16" IsEnabled="False">
+                <Grid>
+
+                    <dx:SimpleButton x:Name="Btn_1" Content="1" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="60" FontSize="30" Click="Btn_1_Click"/>
+                    <dx:SimpleButton x:Name="Btn_2" Content="2" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="60" FontSize="30" Margin="65,0,0,0" Click="Btn_2_Click"/>
+                    <dx:SimpleButton x:Name="Btn_3" Content="3" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="60" FontSize="30" Margin="130,0,0,0" Click="Btn_3_Click"/>
+                    <dx:SimpleButton x:Name="Btn_4" Content="4" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="60" FontSize="30" Margin="195,0,0,0" Click="Btn_4_Click"/>
+                    <dx:SimpleButton x:Name="Btn_5" Content="5" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="60" FontSize="30" Margin="260,0,0,0" Click="Btn_5_Click"/>
+                    <dx:SimpleButton x:Name="Btn_6" Content="6" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="60" FontSize="30" Margin="325,0,0,0" Click="Btn_6_Click"/>
+                    <dx:SimpleButton x:Name="Btn_7" Content="7" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="60" FontSize="30" Margin="390,0,0,0" Click="Btn_7_Click"/>
+                    <dx:SimpleButton x:Name="Btn_8" Content="8" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="60" FontSize="30" Margin="455,0,0,0" Click="Btn_8_Click"/>
+                    <dx:SimpleButton x:Name="Btn_9" Content="9" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="60" FontSize="30" Margin="520,0,0,0" Click="Btn_9_Click"/>
+                    <dx:SimpleButton x:Name="Btn_10" Content="10" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="60" FontSize="30" Margin="585,0,0,0" Click="Btn_10_Click"/>
+                    <dx:SimpleButton x:Name="Btn_11" Content="11" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="60" FontSize="30" Margin="650,0,0,0"/>
+                    <dx:SimpleButton x:Name="Btn_12" Content="12" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="60" FontSize="30" Margin="715,0,0,0"/>
+                    <dx:SimpleButton x:Name="Btn_13" Content="13" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="60" FontSize="30" Margin="780,0,0,0"/>
+                    <dx:SimpleButton x:Name="Btn_14" Content="14" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="60" FontSize="30" Margin="845,0,0,0"/>
+                    <dx:SimpleButton x:Name="Btn_15" Content="15" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="60" FontSize="30" Margin="910,0,0,0"/>
+                    <dx:SimpleButton x:Name="Btn_16" Content="16" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="60" FontSize="30" Margin="975,0,0,0"/>
+                    <dx:SimpleButton x:Name="Btn_17" Content="17" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="60" FontSize="30" Margin="1040,0,0,0"/>
+                    <dx:SimpleButton x:Name="Btn_18" Content="18" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="60" FontSize="30" Margin="1105,0,0,0"/>
+                    <dx:SimpleButton x:Name="Btn_19" Content="19" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="60" FontSize="30" Margin="1170,0,0,0"/>
+                    <dx:SimpleButton x:Name="Btn_20" Content="20" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="60" FontSize="30" Margin="1235,0,0,0"/>
+                    <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Câu hỏi:" Margin="0,65,0,0" TextDecorations="Underline"/>
+                    <TextBox x:Name="txt_cauhoi" HorizontalAlignment="Left" Height="320" Margin="10,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="700"/>
+                    <StackPanel HorizontalAlignment="Left" Height="359" VerticalAlignment="Top" Width="580" Margin="715,55,0,0">
+                        <Grid>
+
+                            <TextBox x:Name="txt_A" HorizontalAlignment="Left" Height="auto" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="450" Margin="60,40,0,0"/>
+                            <TextBox x:Name="txt_B" HorizontalAlignment="Left" Height="auto" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="450" Margin="60,120,0,0"/>
+                            <TextBox x:Name="txt_C" HorizontalAlignment="Left" Height="auto" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="450" Margin="60,200,0,0"/>
+                            <TextBox x:Name="txt_D" HorizontalAlignment="Left" Height="auto" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="450" Margin="60,280,0,0"/>
+                            <RadioButton x:Name="rbA" Content="A" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" FontSize="20"/>
+                            <RadioButton x:Name="rbB" Content="B" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" FontSize="20"/>
+                            <RadioButton x:Name="rbC" Content="C" HorizontalAlignment="Left" Margin="10,200,0,0" VerticalAlignment="Top" FontSize="20"/>
+                            <RadioButton x:Name="rbD" Content="D" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top" FontSize="20"/>
+                            <dx:SimpleButton x:Name="Btn_Next" Content="" Margin="534,323,0,0" Glyph="{dx:DXImageGrayscale Image=Next_32x32.png}" Click="Btn_Next_Click" HorizontalAlignment="Left" Width="46"/>
+                            <dx:SimpleButton x:Name="Btn_Prev" Content="" Margin="483,323,51,0" Glyph="{dx:DXImageGrayscale Image=Prev_32x32.png}" Click="Btn_Prev_Click"/>
+
+                        </Grid>
+
+                    </StackPanel>
+
+                </Grid>
+            </dxlc:GroupBox>
+        </Grid>
+    </Grid>
+</Window>

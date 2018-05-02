@@ -1,0 +1,39 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QLHV_WPF"
+        xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" x:Class="QLHV_WPF.MainWindow"
+        mc:Ignorable="d"
+        Title="Phần mềm Quản lí học viên" Height="550" Width="800" FontFamily="Bree Serif" FontSize="14" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Canvas>
+            <Canvas.Background>
+                <LinearGradientBrush StartPoint=" .2,.2 " EndPoint=" .8,.8">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="LightSteelBlue" Offset="1"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+        </Canvas>
+        <dxwui:HamburgerMenu IsInitiallyCompact="True">
+            <dxwui:HamburgerMenu.Content>
+                <dxwui:NavigationFrame/>
+            </dxwui:HamburgerMenu.Content>
+            <dxwui:HamburgerMenuNavigationButton x:Name="dkhocvien" Content="Đăng kí Học viên mới" GlyphWidth="16" Glyph="pack://application:,,,/QLHV_WPF;component/Resources/Icon/user-1.png" GlyphHeight="16" IsSelected="True" Click="dkhocvien_Click"/>
+            <dxwui:HamburgerMenuNavigationButton x:Name="dshocvien" Content="Danh sách Học viên" GlyphWidth="16" Glyph="pack://application:,,,/QLHV_WPF;component/Resources/Icon/user-3.png" GlyphHeight="16" Click="dshocvien_Click"/>
+            <dxwui:HamburgerMenuNavigationButton x:Name="ketqua" Content="Xem Kết quả thi" GlyphWidth="16" Glyph="pack://application:,,,/QLHV_WPF;component/Resources/Icon/light-bulb-1.png" GlyphHeight="16" Click="ketqua_Click" />
+            <dxwui:HamburgerMenuNavigationButton x:Name="dsgiaovien" Content="Danh sách Giáo Viên" GlyphWidth="16" Glyph="pack://application:,,,/QLHV_WPF;component/Resources/Icon/user-3.png" GlyphHeight="16" Click="dsgiaovien_Click"/>
+            <dxwui:HamburgerMenuNavigationButton x:Name="dslop" Content="Danh sách Lớp" GlyphWidth="16" Glyph="pack://application:,,,/QLHV_WPF;component/Resources/Icon/group.png" GlyphHeight="16" Click="dslop_Click"/>
+            <dxwui:HamburgerMenuNavigationButton x:Name="dskhoa" Content="Danh sách Khoá" GlyphWidth="16" Glyph="pack://application:,,,/QLHV_WPF;component/Resources/Icon/browser.png" GlyphHeight="16" Click="dskhoa_Click"/>
+            <dxwui:HamburgerMenuNavigationButton x:Name="phancong" Content="Phân công Giảng dạy" GlyphWidth="16" Glyph="pack://application:,,,/QLHV_WPF;component/Resources/Icon/document.png" GlyphHeight="16" Click="phancong_Click"/>
+            <dxwui:HamburgerMenuNavigationButton x:Name="taikhoan" Content="Quản lí Tài khoản" GlyphWidth="16" Glyph="pack://application:,,,/QLHV_WPF;component/Resources/Icon/settings.png" GlyphHeight="16" Click="taikhoan_Click"/>
+            <dxwui:HamburgerMenuNavigationButton x:Name="kithi" Content="Tổ chức Kì thi" GlyphWidth="16" Glyph="pack://application:,,,/QLHV_WPF;component/Resources/Icon/document-3.png" GlyphHeight="16" Click="kithi_Click"/>
+            <dxwui:HamburgerMenuNavigationButton x:Name="thoat" Content="Thoát" GlyphWidth="16" Glyph="pack://application:,,,/QLHV_WPF;component/Resources/Icon/cancel.png" GlyphHeight="16" Click="thoat_Click"/>
+        </dxwui:HamburgerMenu>
+        <TextBlock HorizontalAlignment="Left" Margin="239,70,0,0" TextWrapping="Wrap" Text="PHẦN MỀM QUẢN LÍ HỌC VIÊN CHO TRUNG TÂM" VerticalAlignment="Top" FontSize="24"/>
+        <TextBlock HorizontalAlignment="Left" Margin="239,200,0,0" TextWrapping="Wrap" Text="Người thực hiện: Nguyễn Khoa Tuyên" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="239,219,0,0" TextWrapping="Wrap" Text="Giáo viên hướng dẫn: Trương Bá Thái" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,71 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QLHV_WPF"
+        xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" x:Class="QLHV_WPF.Frm_DanhSachHocVien"
+        mc:Ignorable="d"
+        Title="Danh sách học viên" Height="450" Width="800">
+    <Grid>
+        <Canvas>
+            <Canvas.Background>
+                <LinearGradientBrush StartPoint=" .2,.2 " EndPoint=" .8,.8">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="LightSteelBlue" Offset="1"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+        </Canvas>
+        <Grid>
+            <dxlc:GroupBox Header="Thông tin học viên" HorizontalAlignment="Left" VerticalAlignment="Top" Height="160" Width="792" FontFamily="Bree Serif" MinimizeElementVisibility="Visible">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Left" Grid.Column="0" TextWrapping="Wrap" Text="Mã Học viên*" VerticalAlignment="Top" Margin="0,5,0,0" Height="12" Width="auto"/>
+                    <TextBlock HorizontalAlignment="Left" Grid.Column="0"  TextWrapping="Wrap" Text="Họ tên Học viên*" VerticalAlignment="Top" Margin="140,5,0,0" Height="12" Width="auto"/>
+                    <TextBlock HorizontalAlignment="Left" Grid.Column="0"  TextWrapping="Wrap" Text="Ngày sinh*" VerticalAlignment="Top" Margin="0,35,0,0" Height="12" Width="auto"/>
+                    <TextBlock HorizontalAlignment="Left" Grid.Column="0"  TextWrapping="Wrap" Text="Địa chỉ" VerticalAlignment="Top" Margin="0,65,0,0" Height="12" Width="auto"/>
+                    <TextBlock HorizontalAlignment="Left" Grid.Column="0"  TextWrapping="Wrap" Text="Giới tính*" VerticalAlignment="Top" Margin="225,35,0,0" Height="12" Width="auto"/>
+                    <TextBlock HorizontalAlignment="Left" Grid.Column="0"  TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Margin="0,95,0,0" Height="12" Width="auto"/>
+                    <TextBlock HorizontalAlignment="Left" Grid.Column="0"  TextWrapping="Wrap" Text="ĐT" VerticalAlignment="Top" Margin="350,95,0,0" Height="12" Width="auto"/>
+                    <TextBlock HorizontalAlignment="Left" Grid.Column="0"  TextWrapping="Wrap" Text="Nghề nghiệp" VerticalAlignment="Top" Margin="330,35,0,0" Height="12" Width="auto"/>
+                    <dxe:TextEdit x:Name="txt_id" Grid.Column="0"  HorizontalAlignment="Left" Margin="70,0,0,0" VerticalAlignment="Top" Width="60" Height="18" IsReadOnly="True" Background="#FFDAD8D8"/>
+                    <dxe:TextEdit x:Name="txt_hoten" Grid.Column="0"  HorizontalAlignment="Left" Margin="230,0,0,0" VerticalAlignment="Top" Width="265" Height="18"/>
+                    <dxe:DateEdit x:Name="date_ngaysinh" Grid.Column="0"  HorizontalAlignment="Left" Margin="70,30,0,0" VerticalAlignment="Top" Width="150" Height="18"/>
+                    <ComboBox x:Name="txt_gioitinh" Grid.Column="0"  HorizontalAlignment="Left" Margin="280,30,0,0" VerticalAlignment="Top" Width="49" Height="18">
+                        <ComboBoxItem>Nam</ComboBoxItem>
+                        <ComboBoxItem>Nữ</ComboBoxItem>
+                    </ComboBox>
+                    <dxe:TextEdit x:Name="txt_nghenghiep" Grid.Column="0"  HorizontalAlignment="Left" Margin="400,30,0,0" VerticalAlignment="Top" Width="95" Height="18"/>
+                    <dxe:TextEdit x:Name="txt_diachi" Grid.Column="0"  HorizontalAlignment="Left" Margin="70,60,0,0" VerticalAlignment="Top" Width="425" Height="18"/>
+                    <dxe:TextEdit x:Name="txt_email" Grid.Column="0"  HorizontalAlignment="Left" Margin="70,90,0,0" VerticalAlignment="Top" Width="274" Height="18"/>
+                    <dxe:TextEdit x:Name="txt_dt" Grid.Column="0"  HorizontalAlignment="Left" Margin="375,90,0,0" VerticalAlignment="Top" Width="120" Height="18"/>
+                    <dx:SimpleButton x:Name="Btn_addnew" Content="Thêm" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="46,0,0,0" VerticalAlignment="Top" Width="90" Glyph="{dx:DXImageOffice2013 Image=Add_32x32.png}" Click="Btn_addnew_Click"/>
+                    <dx:SimpleButton x:Name="Btn_remove" Content="Xoá" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="46,35,0,0" VerticalAlignment="Top" Width="90" Glyph="{dx:DXImageOffice2013 Image=Cancel_32x32.png}" Click="Btn_remove_Click"/>
+                    <dx:SimpleButton x:Name="Btn_save" Content="Lưu" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="46,70,0,0" VerticalAlignment="Top" Width="90" Glyph="{dx:DXImageOffice2013 Image=Save_32x32.png}" Click="Btn_save_Click"/>
+                    <dx:SimpleButton x:Name="Btn_clear" Content="Tạo mới" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="146,0,0,0" VerticalAlignment="Top" Width="100" Glyph="{dx:DXImageOffice2013 Image=Clear_32x32.png}" Click="Btn_clear_Click"/>
+                    <dx:SimpleButton x:Name="Btn_close" Content="Đóng" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="146,35,0,0" VerticalAlignment="Top" Width="100" Glyph="{dx:DXImageOffice2013 Image=Close_32x32.png}" Click="Btn_close_Click"/>
+                    <dx:SimpleButton x:Name="Btn_search" Content="" Grid.Column="1" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="38" Glyph="{dx:DXImageOffice2013 Image=Zoom_32x32.png}" Click="Btn_search_Click" />
+                    <TextBlock x:Name="tb_thongbao" Grid.Column="0" HorizontalAlignment="Left" Margin="275,123,0,0" TextWrapping="Wrap" Text="" Foreground="Red" VerticalAlignment="Top"/>
+                </Grid>
+            </dxlc:GroupBox>
+            <Grid>
+                <DataGrid x:Name="datagrid" Height="244" Width="782" Margin="0,165,10,10" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="Datagrid_SelectionChanged">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Mã Học viên"  Binding="{Binding MaHocVien}"/>
+                        <DataGridTextColumn Header="Họ tên Học viên" Binding="{Binding HoTenHocVien}"/>
+                        <DataGridTextColumn Header="Ngày sinh" Width="70" Binding="{Binding NgaySinh,StringFormat=dd/MM/yyyy}"/>
+                        <DataGridTextColumn x:Name="column_gioitinh" Header="Giới tính" Binding="{Binding GioiTinh}"/>
+                        <DataGridTextColumn Header="Nghề nghiệp" Binding="{Binding NgheNghiep}"/>
+                        <DataGridTextColumn Header="Địa chỉ" Binding="{Binding DiaChi}"/>
+                        <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+                        <DataGridTextColumn Header="Số điện thoại" Binding="{Binding SoDT}"/>
+                        <DataGridTextColumn Header="Tài khoản" Binding="{Binding TaiKhoan}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

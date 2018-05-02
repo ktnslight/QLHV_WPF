@@ -1,0 +1,90 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QLHV_WPF"
+        xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" x:Class="QLHV_WPF.Frm_TaoKiThi"
+        mc:Ignorable="d"
+        Title="Frm_TaoKiThi" Height="650" Width="1000" FontFamily=" Bree Serif" FontSize="14" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Canvas>
+            <Canvas.Background>
+                <LinearGradientBrush StartPoint=" .2,.2 " EndPoint=" .8,.8">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="LightSteelBlue" Offset="1"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+        </Canvas>
+        <Grid>
+
+            <dxlc:GroupBox Header="Kì thi" HorizontalAlignment="Left" VerticalAlignment="Top" Height="180" Width="570">
+                <Grid>
+                    <DataGrid x:Name="kithi" HorizontalAlignment="Left" Height="137" VerticalAlignment="Top" Width="250" SelectionChanged="kithi_SelectionChanged" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Width="auto" Binding="{Binding MaKiThi}"/>
+                            <DataGridTextColumn Header="Kì Thi" Width="auto" Binding="{Binding TenKiThi}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <TextBlock HorizontalAlignment="Left" Margin="255,5,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="255,35,0,0" TextWrapping="Wrap" Text="Kì thi" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txt_id_kt" HorizontalAlignment="Left" Height="23" Margin="304,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="60"/>
+                    <TextBox x:Name="txt_kithi" HorizontalAlignment="Left" Height="23" Margin="304,30,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230"/>
+                    <dx:SimpleButton x:Name="Btn_ThemKiThi" Content="" HorizontalAlignment="Left" Height="30" Margin="310,60,0,0" VerticalAlignment="Top" Width="40" Glyph="{dx:DXImageGrayscale Image=Add_32x32.png}" Click="Btn_ThemKiThi_Click"/>
+                    <dx:SimpleButton x:Name="Btn_XoaKiThi" Content="" HorizontalAlignment="Left" Height="30" Margin="355,60,0,0" VerticalAlignment="Top" Width="40" Glyph="{dx:DXImageGrayscale Image=Remove_32x32.png}" Click="Btn_XoaKiThi_Click"/>
+                    <dx:SimpleButton x:Name="Btn_LuuKiThi" Content="" HorizontalAlignment="Left" Height="30" Margin="400,60,0,0" VerticalAlignment="Top" Width="40" Glyph="{dx:DXImageGrayscale Image=Apply_32x32.png}" Click="Btn_LuuKiThi_Click"/>
+                    <dx:SimpleButton x:Name="Btn_Lammoi" Content="" HorizontalAlignment="Left" Height="30" Margin="445,60,0,0" VerticalAlignment="Top" Width="40" Glyph="{dx:DXImageGrayscale Image=Reset_32x32.png}" Click="Btn_Lammoi_Click"/>
+
+                </Grid>
+            </dxlc:GroupBox>
+            <dxlc:GroupBox x:Name="gb_de" Header="Đè" HorizontalAlignment="Left" VerticalAlignment="Top" Height="180" Width="400" Margin="575,0,0,0">
+                <Grid>
+                    <DataGrid x:Name="dethi" HorizontalAlignment="Left" Height="137" VerticalAlignment="Top" Width="140" SelectionChanged="dethi_SelectionChanged"  AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Mã đề" Width="100" Binding="{Binding MaDeThi}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <TextBlock HorizontalAlignment="Left" Margin="145,10,0,0" TextWrapping="Wrap" Text="Đề thi" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="cb_dethi" HorizontalAlignment="Left" Height="23" Margin="145,29,0,0" VerticalAlignment="Top" Width="230" IsEditable="True"/>
+                    <dx:SimpleButton x:Name="Btn_ThemDeThi" Content="" HorizontalAlignment="Left" Height="30" Margin="145,60,0,0" VerticalAlignment="Top" Width="40" Glyph="{dx:DXImageGrayscale Image=Add_32x32.png}" Click="Btn_ThemDeThi_Click"/>
+                    <dx:SimpleButton x:Name="Btn_XoaDeThi" Content="" HorizontalAlignment="Left" Height="30" Margin="190,60,0,0" VerticalAlignment="Top" Width="40" Glyph="{dx:DXImageGrayscale Image=Remove_32x32.png}" Click="Btn_XoaDeThi_Click"/>
+
+                </Grid>
+            </dxlc:GroupBox>
+            <dxlc:GroupBox x:Name="gb_cauhoi" Header="Câu hỏi" FontFamily="Bree Serif" FontSize="14" HorizontalAlignment="Left" Width="975" Height="424" MinimizeElementVisibility="Visible" VerticalAlignment="Top" Margin="0,185,0,0">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,5,0,0" TextWrapping="Wrap" Text="Câu hỏi:*" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="116,5,0,0" TextWrapping="Wrap" Text="Môn học:*" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txt_Cauhoi" HorizontalAlignment="Left" Height="180" Margin="10,25,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="580"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,210,0,0" TextWrapping="Wrap" Text="Đáp án:*" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txt_idq" HorizontalAlignment="Left" Height="23" Margin="71,-3,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="40"/>
+                    <TextBox x:Name="txt_da1" HorizontalAlignment="Left" Height="23" Margin="30,230,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="560"/>
+                    <TextBox x:Name="txt_da2" HorizontalAlignment="Left" Height="23" Margin="30,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="560"/>
+                    <TextBox x:Name="txt_da3" HorizontalAlignment="Left" Height="23" Margin="30,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="560"/>
+                    <TextBox x:Name="txt_da4" HorizontalAlignment="Left" Height="23" Margin="30,320,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="560" SelectionOpacity="0"/>
+                    <RadioButton x:Name="daA" Content="A" HorizontalAlignment="Left" Margin="-1,231,0,0" VerticalAlignment="Top" FontSize="12"/>
+                    <RadioButton x:Name="daB" Content="B" HorizontalAlignment="Left" Margin="0,261,0,0" VerticalAlignment="Top" FontSize="12"/>
+                    <RadioButton x:Name="daC" Content="C" HorizontalAlignment="Left" Margin="0,291,0,0" VerticalAlignment="Top" FontSize="12"/>
+                    <RadioButton x:Name="daD" Content="D" HorizontalAlignment="Left" Margin="0,321,0,0" VerticalAlignment="Top" FontSize="12"/>
+                    <dx:SimpleButton x:Name="Btn_ThemCauHoi" Content="" HorizontalAlignment="Left" Height="41" Margin="631,245,0,0" VerticalAlignment="Top" Width="49" Glyph="{dx:DXImageGrayscale Image=Add_32x32.png}" Click="Btn_ThemCauHoi_Click"/>
+                    <dx:SimpleButton x:Name="Btn_XoaCauHoi" Content="" HorizontalAlignment="Left" Height="41" Margin="631,292,0,0" VerticalAlignment="Top" Width="49" Glyph="{dx:DXImageGrayscale Image=Remove_32x32.png}" Click="Btn_XoaCauHoi_Click"/>
+                    <dx:SimpleButton x:Name="Btn_LuuCauHoi" Content="" HorizontalAlignment="Left" Height="41" Margin="686,245,0,0" VerticalAlignment="Top" Width="49" Glyph="{dx:DXImageGrayscale Image=Apply_32x32.png}" Click="Btn_LuuCauHoi_Click"/>
+                    <dx:SimpleButton x:Name="Btn_TaoMoiCauHoi" Content="" HorizontalAlignment="Left" Margin="686,292,0,0" Width="49" Glyph="{dx:DXImageGrayscale Image=Reset_32x32.png}" Height="41" VerticalAlignment="Top" Click="Btn_TaoMoiCauHoi_Click"/>
+                    <ComboBox x:Name="cb_lop" HorizontalAlignment="Left" Margin="185,-3,0,0" VerticalAlignment="Top" Width="240"/>
+                    <DataGrid x:Name="cauhoi" HorizontalAlignment="Left" Height="180" Margin="590,25,0,0" VerticalAlignment="Top" Width="351" SelectionChanged="cauhoi_SelectionChanged"  AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding MaCauHoi}"/>
+                            <DataGridTextColumn Header="Câu hỏi" Width="auto" Binding="{Binding CauHoi}"/>
+                            <DataGridTextColumn Header="Đáp án A" Width="auto" Binding="{Binding DapAnA}"/>
+                            <DataGridTextColumn Header="Đáp án B" Width="auto" Binding="{Binding DapAnB}"/>
+                            <DataGridTextColumn Header="Đáp án C" Width="auto" Binding="{Binding DapAnC}"/>
+                            <DataGridTextColumn Header="Đáp án D" Width="auto" Binding="{Binding DapAnD}"/>
+                            <DataGridTextColumn Header="Đáp án" Width="auto" Binding="{Binding TraLoi}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </dxlc:GroupBox>
+            <TextBlock x:Name="tb_thongbao" HorizontalAlignment="Left" Margin="10,595,0,0" TextWrapping="Wrap" Text="" Foreground="Red" VerticalAlignment="Top"/>
+        </Grid>
+    </Grid>
+</Window>

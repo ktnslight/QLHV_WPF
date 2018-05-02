@@ -1,0 +1,42 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QLHV_WPF"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" x:Class="QLHV_WPF.Frm_PhanCong"
+        mc:Ignorable="d"
+        Title="Phân công" Height="450" Width="800" FontFamily="Bree Serif" FontSize="14" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid>
+            <Canvas>
+                <Canvas.Background>
+                    <LinearGradientBrush StartPoint=" .2,.2 " EndPoint=" .8,.8">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="LightSteelBlue" Offset="1"/>
+                    </LinearGradientBrush>
+                </Canvas.Background>
+
+            </Canvas>
+        </Grid>
+        <TextBlock HorizontalAlignment="Center" Margin="10,10,368,0" TextWrapping="Wrap" Text="PHÂN CÔNG GIÁO VIÊN" VerticalAlignment="Top" FontFamily="Robika" FontSize="36" Width="414"/>
+        <DataGrid x:Name="datagrid" HorizontalAlignment="Left" Height="210" Margin="10,199,0,0" VerticalAlignment="Top" Width="772" AutoGenerateColumns="False" SelectionChanged="datagrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Lớp" Width="auto" Binding="{Binding lop}"/>
+                <DataGridTextColumn Header="Giáo viên giảng dạy" Width="auto" Binding="{Binding giaovien}"/>
+                <DataGridTextColumn Header="Buổi" Width="auto" Binding="{Binding buoi}"/>
+                <DataGridTextColumn Header="Giờ" Width="auto" Binding="{Binding gio}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock TextWrapping="Wrap" Text="Giáo viên" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,75,0,0"/>
+        <TextBlock TextWrapping="Wrap" Text="Lớp" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,105,0,0"/>
+        <TextBlock TextWrapping="Wrap" Text="Ca" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,135,0,0"/>
+        <ComboBox x:Name="cb_giaovien" HorizontalAlignment="Left" Margin="73,69,0,0" VerticalAlignment="Top" Width="200"/>
+        <ComboBox x:Name="cb_lop" HorizontalAlignment="Left" Margin="73,100,0,0" VerticalAlignment="Top" Width="200"/>
+        <ComboBox x:Name="cb_ca" HorizontalAlignment="Left" Margin="73,130,0,0" VerticalAlignment="Top" Width="200"/>
+
+        <dx:SimpleButton x:Name="Btn_Phancong" Content="Phân công" HorizontalAlignment="Left" Height="35" Margin="329,70,0,0" VerticalAlignment="Top" Width="120" Click="Btn_PhanCong_Click"/>
+        <dx:SimpleButton x:Name="Btn_Huy" Content="Huỷ" HorizontalAlignment="Left" Height="35" Margin="329,110,0,0" VerticalAlignment="Top" Width="120" Click="Btn_Huy_Click" />
+        <TextBlock x:Name="tb_thongbao" TextWrapping="Wrap" Text="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,180,0,0" Foreground="Red"/>
+    </Grid>
+</Window>

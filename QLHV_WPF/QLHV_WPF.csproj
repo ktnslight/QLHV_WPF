@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CEAEB4E3-AEFA-4357-B531-468C687BBF5B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QLHV_WPF</RootNamespace>
+    <AssemblyName>QLHV_WPF</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Images.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Mvvm.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Charts.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Controls.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.LayoutControl.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Printing.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2010Blue.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Frm_DangKiHocVien.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frm_DangNhap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frm_DanhSachGiaoVien.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frm_DanhSachHocVien.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frm_DanhSachKhoa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frm_DanhSachLop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frm_DanhSachTaiKhoan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frm_PhanCong.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frm_TaoKiThi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frm_ThiTracNghiem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frm_XemKetQua.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frm_XuatBienLai.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Data.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_DangKiHocVien.xaml.cs">
+      <DependentUpon>Frm_DangKiHocVien.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_DangNhap.xaml.cs">
+      <DependentUpon>Frm_DangNhap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_DanhSachGiaoVien.xaml.cs">
+      <DependentUpon>Frm_DanhSachGiaoVien.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_DanhSachHocVien.xaml.cs">
+      <DependentUpon>Frm_DanhSachHocVien.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_DanhSachKhoa.xaml.cs">
+      <DependentUpon>Frm_DanhSachKhoa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_DanhSachLop.xaml.cs">
+      <DependentUpon>Frm_DanhSachLop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_DanhSachTaiKhoan.xaml.cs">
+      <DependentUpon>Frm_DanhSachTaiKhoan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_PhanCong.xaml.cs">
+      <DependentUpon>Frm_PhanCong.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_TaoKiThi.xaml.cs">
+      <DependentUpon>Frm_TaoKiThi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ThiTracNghiem.xaml.cs">
+      <DependentUpon>Frm_ThiTracNghiem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_XemKetQua.xaml.cs">
+      <DependentUpon>Frm_XemKetQua.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_XuatBienLai.xaml.cs">
+      <DependentUpon>Frm_XuatBienLai.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Data.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Data.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Data.dbml.layout">
+      <DependentUpon>Data.dbml</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icon\airplane.png" />
+    <Resource Include="Resources\Icon\attachment.png" />
+    <Resource Include="Resources\Icon\broken-heart.png" />
+    <Resource Include="Resources\Icon\browser.png" />
+    <Resource Include="Resources\Icon\cancel.png" />
+    <Resource Include="Resources\Icon\center-alignment.png" />
+    <Resource Include="Resources\Icon\clock-1.png" />
+    <Resource Include="Resources\Icon\clock.png" />
+    <Resource Include="Resources\Icon\cloud-computing.png" />
+    <Resource Include="Resources\Icon\compass.png" />
+    <Resource Include="Resources\Icon\computer.png" />
+    <Resource Include="Resources\Icon\cursor.png" />
+    <Resource Include="Resources\Icon\document-1.png" />
+    <Resource Include="Resources\Icon\document-2.png" />
+    <Resource Include="Resources\Icon\document-3.png" />
+    <Resource Include="Resources\Icon\document.png" />
+    <Resource Include="Resources\Icon\download.png" />
+    <Resource Include="Resources\Icon\earth-globe.png" />
+    <Resource Include="Resources\Icon\email.png" />
+    <Resource Include="Resources\Icon\film.png" />
+    <Resource Include="Resources\Icon\folder.png" />
+    <Resource Include="Resources\Icon\gamepad.png" />
+    <Resource Include="Resources\Icon\group.png" />
+    <Resource Include="Resources\Icon\heart.png" />
+    <Resource Include="Resources\Icon\internet.png" />
+    <Resource Include="Resources\Icon\layers.png" />
+    <Resource Include="Resources\Icon\left-alignment.png" />
+    <Resource Include="Resources\Icon\light-bulb-1.png" />
+    <Resource Include="Resources\Icon\light-bulb.png" />
+    <Resource Include="Resources\Icon\link.png" />
+    <Resource Include="Resources\Icon\list.png" />
+    <Resource Include="Resources\Icon\mail.png" />
+    <Resource Include="Resources\Icon\microphone.png" />
+    <Resource Include="Resources\Icon\notification.png" />
+    <Resource Include="Resources\Icon\padlock.png" />
+    <Resource Include="Resources\Icon\pencil.png" />
+    <Resource Include="Resources\Icon\phone-book-1.png" />
+    <Resource Include="Resources\Icon\phone-book.png" />
+    <Resource Include="Resources\Icon\picture-1.png" />
+    <Resource Include="Resources\Icon\picture.png" />
+    <Resource Include="Resources\Icon\placeholder.png" />
+    <Resource Include="Resources\Icon\push-pin.png" />
+    <Resource Include="Resources\Icon\right-alignment.png" />
+    <Resource Include="Resources\Icon\settings.png" />
+    <Resource Include="Resources\Icon\share.png" />
+    <Resource Include="Resources\Icon\shield-1.png" />
+    <Resource Include="Resources\Icon\shield-2.png" />
+    <Resource Include="Resources\Icon\shield.png" />
+    <Resource Include="Resources\Icon\smartphone.png" />
+    <Resource Include="Resources\Icon\speech-bubble-1.png" />
+    <Resource Include="Resources\Icon\speech-bubble.png" />
+    <Resource Include="Resources\Icon\tablet.png" />
+    <Resource Include="Resources\Icon\unlock.png" />
+    <Resource Include="Resources\Icon\upload.png" />
+    <Resource Include="Resources\Icon\user-1.png" />
+    <Resource Include="Resources\Icon\user-2.png" />
+    <Resource Include="Resources\Icon\user-3.png" />
+    <Resource Include="Resources\Icon\user.png" />
+    <Resource Include="Resources\Icon\volume.png" />
+    <Resource Include="Resources\Icon\zoom-in.png" />
+    <Resource Include="Resources\Icon\zoom-out.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

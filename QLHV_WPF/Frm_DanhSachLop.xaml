@@ -1,0 +1,55 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QLHV_WPF"
+        xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" x:Class="QLHV_WPF.Frm_DanhSachLop"
+        mc:Ignorable="d"
+        Title="Danh sách lớp" Height="450" Width="600" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid>
+            <Canvas>
+                <Canvas.Background>
+                    <LinearGradientBrush StartPoint=" .2,.2 " EndPoint=" .8,.8">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="LightSteelBlue" Offset="1"/>
+                    </LinearGradientBrush>
+                </Canvas.Background>
+            </Canvas>
+        </Grid>
+
+        <dxlc:GroupBox Header="Chi tiết Lớp" HorizontalAlignment="Left" VerticalAlignment="Top" Width="580" Height="180" FontFamily="Bree Serif" FontSize="14">
+            <Grid>
+
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Khoá" VerticalAlignment="Top" Margin="140,5,0,0"/>
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Mã Lớp" VerticalAlignment="Top" Margin="0,5,0,0"/>
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Lớp" VerticalAlignment="Top" Margin="0,35,0,0"/>
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Sỉ số hiện tại" VerticalAlignment="Top" Margin="0,65,0,0"/>
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Học phí" VerticalAlignment="Top" Margin="0,95,0,0"/>
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="VNĐ" VerticalAlignment="Top" Margin="200,95,0,0" />
+                <TextBlock x:Name="tb_Thongbao" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" Foreground="Red" VerticalAlignment="Top" Margin="0,123,0,-1" />
+                <TextBox x:Name="txt_id" HorizontalAlignment="Left" Height="23" Margin="60,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="75"/>
+                <ComboBox x:Name="cb_khoa" HorizontalAlignment="Left" Margin="180,0,0,0" VerticalAlignment="Top" Width="165" />
+                <TextBox x:Name="txt_lop" HorizontalAlignment="Left" Height="23" Margin="60,30,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="285"/>
+                <TextBox x:Name="txt_ss" HorizontalAlignment="Left" Height="23" Margin="85,60,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50"/>
+                <TextBox x:Name="txt_hocphi" HorizontalAlignment="Left" Height="23" Margin="60,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="135"/>
+                <dx:SimpleButton x:Name="Btn_addnew" Content="Thêm" HorizontalAlignment="Left" Height="30" Margin="350,-1,0,0" VerticalAlignment="Top" Width="90" Glyph="{dx:DXImageOffice2013 Image=Add_32x32.png}" Click="Btn_addnew_Click"/>
+                <dx:SimpleButton x:Name="Btn_remove" Content="Xoá" HorizontalAlignment="Left" Height="30" Margin="350,34,0,0" VerticalAlignment="Top" Width="90" Glyph="{dx:DXImageOffice2013 Image=Cancel_32x32.png}" Click="Btn_remove_Click"/>
+                <dx:SimpleButton x:Name="Btn_save" Content="Lưu" HorizontalAlignment="Left" Height="30" Margin="350,69,0,0" VerticalAlignment="Top" Width="90" Glyph="{dx:DXImageOffice2013 Image=Save_32x32.png}" Click="Btn_save_Click"/>
+                <dx:SimpleButton x:Name="Btn_clear" Content="Tạo mới" HorizontalAlignment="Left" Height="30" Margin="450,-1,0,0" VerticalAlignment="Top" Width="106" Glyph="{dx:DXImageOffice2013 Image=Clear_32x32.png}" Click="Btn_clear_Click"/>
+                <dx:SimpleButton x:Name="Btn_close" Content="Đóng" HorizontalAlignment="Left" Height="30" Margin="450,34,0,0" VerticalAlignment="Top" Width="106" Glyph="{dx:DXImageOffice2013 Image=Close_32x32.png}" Click="Btn_close_Click"/>
+            </Grid>
+        </dxlc:GroupBox>
+        <DataGrid x:Name="datagrid" HorizontalAlignment="Left" Height="224" Margin="0,185,0,0" VerticalAlignment="Top" Width="580" SelectionChanged="datagrid_SelectionChanged" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Width="40" Binding="{Binding MaLopHoc}"/>
+                <DataGridTextColumn Header="Lớp" Width="auto" Binding="{Binding TenLopHoc}"/>
+                <DataGridTextColumn Header="Sỉ số" Width="auto" Binding="{Binding SiSoDK}"/>
+                <DataGridTextColumn Header="Học phí" Width="auto" Binding="{Binding HocPhi}"/>
+                <DataGridTextColumn Header="Khoá" Width="auto" Binding="{Binding MaKhoaHoc}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>
